@@ -7,7 +7,7 @@
     --header-title: #11587d; /* primary blue color */
     --helper-title: #C698E3;
     --helper-color: #8c53af;
-    --process-title: #f7b2d9;
+    --process-title: #eb93c5;
     --process-color: #c6609b; /* pink/red color */
 }
 
@@ -46,8 +46,15 @@ body {
 h1 {
 
 }
+a{
+    text-decoration: none;
+    color:black
+}
+a:hover{
+    color: var(--header-color);
+}
 
-p {
+p{
 
 }
 
@@ -262,6 +269,11 @@ section {
   letter-spacing: 3px;
 }
 
+.helper-item a:hover {
+    text-decoration: none;
+    color:#C698E3;
+}
+
 /* Quick tip styling (reuse same design) */
 #helper-tools .quick-tip {
   background-color: var(--helper-color);
@@ -370,7 +382,7 @@ section {
 
 #process h2 {
   align-self: flex-start;
-  color: #f7b2d9;
+  color: var(--process-title);
   font-family: "Arcade Classic", sans-serif;
   font-size: 5rem;
   margin-bottom: 80px;
