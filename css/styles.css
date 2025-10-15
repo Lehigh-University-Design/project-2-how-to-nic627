@@ -3,13 +3,44 @@
 /* Global variables */
 
 :root {
-    
+    --header-color: #3e82a6; /* primary blue color */
+    --header-title: #11587d; /* primary blue color */
+    --helper-title: #C698E3;
+    --helper-color: #8c53af;
+    --process-title: #f7b2d9;
+    --process-color: #c6609b; /* pink/red color */
 }
+
+/* Fonts */
+@font-face {
+  font-family: 'SF Intermosaic';
+  src: url('../fonts/SFIntermosaic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arcade Classic';
+  src: url('../fonts/ARCADECLASSIC.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 
 /* Main styles */
 
 body {
-
+  
 }
 
 h1 {
@@ -19,3 +50,527 @@ h1 {
 p {
 
 }
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation bar */
+.navbar {
+  position: sticky;       /* makes it stick to top when scrolling */
+  top: 0;                 /* sticks at the very top */
+  z-index: 1000;          /* ensures it stays above other content */
+  background-color: var(--header-color);
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-family: 'Arcade Classic', sans-serif;
+  font-weight: bold;
+  color: white;
+  transition: color 0.5s ease;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #96cae6; /* darker blue */
+  -webkit-text-stroke: 0%
+}
+
+/* Page sections */
+/* Default section styles */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 3rem;
+  background-color: #ceeaff7f;
+  padding: 100px 100px;
+  border-bottom: 10px solid #dbe6ee;
+  letter-spacing: 3px;
+  h2{
+    font-family: "Arcade Classic", sans-serif;
+  }
+  
+}
+
+/* TITLE SECTION */
+#title {
+  display: flex;
+  justify-content: center;     /* centers horizontally */
+  align-items: center;         /* centers vertically */
+  height: 100vh;               /* full screen height for intro feel */
+  background-color: #e5eaed;   /* optional: match your theme */
+  border-top: 6px solid var(--header-color);
+  border-bottom: 1px solid #dbe6ee;
+  position: relative;
+}
+
+.title-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-content img {
+  width: 700px;                /* adjust as needed */
+  height: auto;                /* keeps proportions */
+  image-rendering: pixelated;  /* makes pixel art look crisp */
+}
+
+
+
+
+
+/* SOFTWARE SECTION */
+#software {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 100px 100px;
+  background-color: #e5eaed;
+  border-top: 6px solid var(--header-color);
+}
+
+#software h2 {
+  color: var(--header-color);
+  font-family: "Arcade Classic", sans-serif;
+  font-size: 5rem;
+  margin-bottom: 80px;
+}
+
+/* Container for both columns */
+.software-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Left side (icons + text) */
+.software-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* space between each software */
+}
+
+.software-item {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* space between icon and text */
+}
+
+.software-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.software-item p {
+  font-family: "SF Intermosaic", monospace;
+  font-size: 1.8rem;
+  color: black;
+  letter-spacing: 3px;
+}
+
+/* Right side quick tip box */
+#software .quick-tip {
+  background-color: var(--header-title);
+  padding: 25px 30px;
+  max-width: 700px;
+  border-radius: 6px;
+  font-family: "SF Intermosaic", monospace;
+}
+
+#software .quick-tip h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#software .quick-tip p {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+
+/* HELPER TOOLS SECTION */
+#helper-tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 100px 100px;
+  background-color: #e5eaed;
+  border-top: 6px solid #C698E3;
+}
+
+#helper-tools h2 {
+  color: #C698E3;
+  font-family: "Arcade Classic", sans-serif;
+  font-size: 5rem;
+  margin-bottom: 80px;
+}
+
+/* Content layout (same as software) */
+.helper-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Left side list */
+.helper-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.helper-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.helper-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.helper-item p {
+  font-family: "SF Intermosaic", monospace;
+  font-size: 1.8rem;
+  color: black;
+  letter-spacing: 3px;
+}
+
+/* Quick tip styling (reuse same design) */
+#helper-tools .quick-tip {
+  background-color: var(--helper-color);
+  padding: 25px 30px;
+  max-width: 700px;
+  border-radius: 6px;
+  font-family: "SF Intermosaic", monospace;
+}
+
+#helper-tools .quick-tip h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#helper-tools .quick-tip p {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+/* HOOKER SECTION */
+#hooker {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 80px 100px;
+  background-color: #e5eaed;
+  border-top: 6px solid var(--header-color);
+  min-height: auto;       /* prevent forcing full viewport height */
+  height: auto;           /* allow section to expand with content */
+  overflow: hidden;       /* ensures nothing leaks visually */
+}
+
+#hooker h2 {
+  color: var(--header-color);
+  font-family: "Arcade Classic", sans-serif;
+  font-size: 5rem;
+  margin-bottom: 80px;
+}
+
+/* Layout for the image + text */
+.hooker-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 60px;
+  flex-wrap: wrap;        /* allow wrapping if needed on small screens */
+}
+
+/* Image box */
+.hooker-photo {
+  width: 600px;
+  height: 600px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;       /* keeps image from overflowing */
+}
+
+/* Image placeholder */
+.hooker-photo img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover; /* fill the box exactly */
+  display: block;    /* removes tiny spacing */
+  border-radius: 10px; /* match rounded corners */
+  border: var(--header-color) solid 6px;
+}
+
+/* Text box */
+.hooker-info {
+  background-color: var(--header-title);
+  color: white;
+  padding: 25px 30px;
+  max-width: 600px;
+  border-radius: 6px;
+  font-family: "SF Intermosaic", monospace;
+}
+
+.hooker-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hooker-info p {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+
+
+/* PROCESS SECTION */
+#process {
+  padding: 100px 100px;
+  border-top: 6px solid var(--process-title);
+  background-color: #e5eaed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: auto;
+  
+}
+
+#process h2 {
+  align-self: flex-start;
+  color: #f7b2d9;
+  font-family: "Arcade Classic", sans-serif;
+  font-size: 5rem;
+  margin-bottom: 80px;
+}
+
+
+/* Each step block */
+.process-step {
+  width: 100%;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align everything to left */
+ 
+}
+
+
+/* Step content container */
+.step-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 60px;
+}
+
+/* Reverse layout for alternating steps */
+.step-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image placeholder */
+.process-photo img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover; /* fill the box exactly */
+  display: block;    /* removes tiny spacing */
+  border-radius: 10px; /* match rounded corners */
+  border: #c6609b solid 6px;
+}
+
+
+/* Step text box */
+.process-info {
+  background-color: var(--process-color);
+  padding: 15px 20px;
+  font-family: "SF Intermosaic", monospace;
+  font-size: 1.5rem;
+  max-width: 600px;
+  line-height: 1;
+  color: white; 
+}
+.process-step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  
+}
+
+.process-step p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Quick tip box */
+.quick-tip {
+  position: relative; /* important — allows positioning inside */
+  background-color: var(--process-color);
+  padding: 15px 20px;
+  margin-top: 20px;
+  max-width: 600px;
+  border-radius: 6px;
+  font-family: "SF Intermosaic", monospace;
+  color: white;
+  overflow: visible; /* ensures icon can sit slightly outside */
+}
+
+.quick-tip p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-family: "Roboto", sans-serif;
+  color: white; 
+}
+
+.quick-tip h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: white; 
+}
+
+.quick-tip::before {
+  content: none;
+}
+
+/* Add your custom icon */
+.quick-tip .tip-icon {
+  position: absolute;
+  top: -100px;     /* moves above the box slightly */
+  right: -70px;    /* shifts slightly to the side */
+  width: 180px;    /* adjust size as needed */
+  height: auto;
+  z-index: 5;     /* ensures it's on top of everything */
+  image-rendering: pixelated; /* keeps your art crisp */
+  pointer-events: none; /* avoids blocking mouse hover */
+}
+/* Make Quick Tip align right for reverse steps */
+.process-step.reverse .quick-tip {
+  align-self: flex-end; /* pushes it under the right image */
+}
+
+/* Keep left-aligned for normal steps */
+.process-step:not(.reverse) .quick-tip {
+  align-self: flex-start;
+}
+
+/* Optional: consistent top margin */
+.quick-tip {
+  margin-top: 20px;
+}
+
+
+
+/* FINAL DESIGN SECTION */
+#design {
+  padding: 80px 100px;
+  border-top: 6px solid var(--header-color);
+  background-color: #e5eaed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: auto;           /* allow section to expand naturally */
+  min-height: auto;       /* remove forced full-screen sizing */
+  overflow: hidden;       /* stop bleeding visuals */
+}
+
+#design h2 {
+  color: var(--helper-title);
+  font-family: "Arcade Classic", sans-serif;
+  font-size: 5rem;
+  margin-bottom: 80px;
+}
+
+/* Layout for image + thank-you box */
+.design-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 60px;
+  flex-wrap: wrap; /* keeps layout responsive */
+}
+
+/* Image box */
+.design-photo {
+  width: 600px;
+  height: 600px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.design-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  border: var(--helper-color) solid 6px;
+}
+
+/* Thank-you box */
+.thankyou-box {
+  background-color: var(--helper-color);
+  padding: 25px 30px;
+  max-width: 600px;
+  border-radius: 6px;
+  font-family: "SF Intermosaic", monospace;
+  flex-shrink: 0;
+}
+
+.thankyou-box h3 {
+  font-size: 2rem;
+  color: var(--helper-title);
+  margin-bottom: 15px;
+}
+
+.thankyou-box p {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  color: white
+}
+
+
+
+section:nth-child(even) {
+  background-color: #e9f3fa;
+}
+
+
+
